@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ For My Healer, Vishakha ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        
+        :root {
+            --rose: #e11d48;
+            --blush: #fda4af;
+        }
+        
+        * { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(to bottom, #fff1f2, #fce7f3);
+        }
+        
+        .heading-font { font-family: 'Playfair Display', serif; }
+        
+        .heart-float {
+            position: absolute;
+            font-size: 2.2rem;
+            color: var(--rose);
+            animation: floatHeart 9s linear infinite;
+            opacity: 0.75;
+            pointer-events: none;
+        }
+        
+        @keyframes floatHeart {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+            15% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+        
+        .photo-card {
+            transition: all 0.5s ease;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(225,29,72,0.15);
+        }
+        
+        .photo-card:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(225,29,72,0.3);
+        }
+        
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .photo-card:hover img {
+            transform: scale(1.12);
+        }
+        
+        .stethoscope { animation: heartbeat 1.6s infinite; }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.14); }
+        }
+    </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden">
+
+    <!-- Floating Hearts -->
+    <div id="hearts-container" class="fixed inset-0 pointer-events-none z-50"></div>
+
+    <!-- Navbar -->
+    <nav class="bg-white/85 backdrop-blur-lg sticky top-0 z-50 border-b border-rose-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-rose-500 to-pink-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-md">❤️</div>
+                <span class="heading-font text-3xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Vishakha</span>
+            </div>
+            
+            <div class="flex items-center gap-5">
+                <button onclick="toggleMusic()" class="w-12 h-12 flex items-center justify-center text-3xl bg-rose-50 rounded-full hover:bg-rose-100 shadow">
+                    🎵
+                </button>
+                <button onclick="createHearts(18)" class="px-7 py-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-3xl flex items-center gap-2 hover:scale-105 shadow-md">
+                    <i class="fa-solid fa-heart"></i> Hearts
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center justify-center px-6 py-20 relative hero-bg">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-rose-900/40 to-rose-900/70"></div>
+        
+        <div class="relative z-10 text-center text-white max-w-4xl">
+            <h1 class="heading-font text-6xl md:text-8xl font-bold mb-8 leading-tight">
+                My Beautiful<br>Future Doctor
+            </h1>
+            
+            <p class="text-2xl md:text-4xl mb-12 font-light">
+                Vishakha, you don't just study medicine...<br>
+                <span class="font-medium">You are the healing my heart always needed.</span>
+            </p>
+            
+            <button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})" 
+                class="px-12 py-6 bg-white text-rose-600 font-semibold text-xl rounded-full shadow-2xl hover:bg-rose-50 flex items-center gap-4 mx-auto">
+                Read My Letter <span class="text-3xl">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Our 3 Special Photos -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-5xl text-rose-700">Our Favorite Moments</h2>
+                <p class="text-xl text-gray-600 mt-3">Just three photos that make my heart race every time</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Photo 1 - replace src with your photo -->
+                <div class="photo-card aspect-[4/5] md:aspect-square">
+                    <img src="assets/PHOTO1.jpg" alt="Our first special moment">
+                </div>
+                
+                <!-- Photo 2 - replace src with your photo -->
+                <div class="photo-card aspect-[4/5] md:aspect-square">
+                    <img src="assets/PHOTO3.jpg" alt="Coffee date memory">
+                </div>
+                
+                <!-- Photo 3 - replace src with your photo -->
+                <div class="photo-card aspect-[4/5] md:aspect-square">
+                    <img src="assets/PHOTO2.jpg" alt="You in white coat">
+                </div>
+            </div>
+                </div>
+    </section>
+
+    <!-- Reasons Why -->
+    <section class="py-20 px-6 bg-gradient-to-br from-rose-50 to-pink-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-5xl text-rose-700">Why My Heart Chose You</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl">
+                    <div class="text-7xl mb-6">🩺</div>
+                    <h3 class="text-3xl font-semibold mb-4 text-rose-600">You Heal Everything</h3>
+                    <p class="text-gray-700">Your voice alone fixes my worst days. Your hugs? Stronger than any medicine.</p>
+                </div>
+                
+                <div class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl">
+                    <div class="text-7xl mb-6">📚</div>
+                    <h3 class="text-3xl font-semibold mb-4 text-rose-600">Your Mind is Beautiful</h3>
+                    <p class="text-gray-700">Watching you master anatomy at 3 AM... it's the sexiest thing I've ever seen.</p>
+                </div>
+                
+                <div class="bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl">
+                    <div class="text-7xl mb-6">💕</div>
+                    <h3 class="text-3xl font-semibold mb-4 text-rose-600">You Love Perfectly</h3>
+                    <p class="text-gray-700">You remember everything — my likes, my moods, my silly habits. That's true love.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Letter -->
+    <section id="letter" class="py-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-12 md:p-16 rounded-[3rem] shadow-2xl relative border border-rose-100">
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-white text-5xl shadow-xl">💌</div>
+                
+                <div class="text-center mb-10">
+                    <div class="text-rose-500 text-sm tracking-widest mb-2">14 FEB 2026</div>
+                    <h2 class="heading-font text-5xl text-rose-700">My Love Letter</h2>
+                </div>
+                
+                <div class="text-gray-800 text-xl leading-relaxed space-y-6">
+                    <p>Dear Vishakha,</p>
+                    
+                    <p>Every time I see you in that white coat, focused and brilliant, my heart forgets how to beat normally — but in the best way.</p>
+                    
+                    <p>You study so hard, care so deeply, and still make time to check if I've eaten or to send me your cute voice notes. That care makes me fall in love all over again every single day.</p>
+                    
+                    <p>You're not just smart and kind — you're my peace, my motivation, my everything. You make me want to be better, to stand by you through every exam, every duty, every dream.</p>
+                    
+                    <p>This Valentine's, I don't want just today. I want all our tired hugs after long days, all our late-night talks, all our future laughter and adventures.</p>
+                    
+                    <p>Will you be my Valentine… forever?</p>
+                    
+                    <p class="mt-10">
+                        I love you more than words (or any textbook) can say.<br><br>
+                        <span class="block text-rose-600 text-3xl heading-font mt-4">Forever yours,</span>
+                        <span class="text-rose-500 text-2xl">Aryan</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surprise -->
+    <section class="py-24 bg-gradient-to-br from-rose-900 to-purple-900 text-white text-center px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="heading-font text-6xl md:text-7xl mb-10">
+                Will You Be My Valentine...<br><span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 to-rose-300">Forever?</span>
+            </h2>
+            
+            <div onclick="yesForever()" class="cursor-pointer mx-auto w-72 h-72 bg-white rounded-full flex items-center justify-center text-rose-500 text-[180px] shadow-[0_0_70px_rgb(244,63,94)] hover:scale-110 active:scale-90 transition-transform">
+                ❤️
+            </div>
+            
+            <p class="text-2xl mt-12 max-w-xl mx-auto">Click the heart to say yes to a lifetime of love, support, and midnight coffee dates.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 text-center">
+        <p class="text-rose-400">Made with endless love • Aryan for Vishakha • 14 Feb 2026</p>
+        <p class="text-sm mt-3 text-gray-500">Our love lasts longer than any website ever could ❤️</p>
+    </footer>
+
+    <!-- Music Player (hidden toggle) -->
+    <div id="music-player" class="fixed bottom-6 right-6 bg-white rounded-3xl shadow-2xl hidden w-80 overflow-hidden">
+        <div class="bg-gradient-to-r from-rose-500 to-pink-500 p-4 text-white flex justify-between items-center">
+            <span class="font-medium">Our Song</span>
+            <button onclick="toggleMusic()" class="text-xl">✕</button>
+        </div>
+        <div class="p-5">
+            <audio id="romantic-audio" loop>
+                <source src="assets/AUDIO-2026-02-14-02-16-12.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="flex items-center gap-4">
+                <button onclick="playPause()" id="play-btn" class="w-14 h-14 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center text-4xl">▶</button>
+                <div>
+                    <div class="font-medium">Apocalypse</div>
+                    <div class="text-sm text-gray-500">Cigarettes After Sex</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHearts(count) {
+            const container = document.getElementById('hearts-container');
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-float';
+                heart.textContent = ['❤️','💖','💗','💘'][Math.floor(Math.random()*4)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random()*7 + 7) + 's';
+                heart.style.fontSize = (Math.random()*1.6 + 1.8) + 'rem';
+                container.appendChild(heart);
+                setTimeout(() => heart.remove(), 16000);
+            }
+        }
+
+        setInterval(() => { if (Math.random() > 0.65) createHearts(2 + Math.floor(Math.random()*4)); }, 3500);
+
+        // Music controls
+        let isPlaying = false;
+        const audio = document.getElementById('romantic-audio');
+
+        function toggleMusic() {
+            document.getElementById('music-player').classList.toggle('hidden');
+        }
+
+        function playPause() {
+            if (isPlaying) {
+                audio.pause();
+                document.getElementById('play-btn').innerHTML = '▶';
+            } else {
+                audio.play().catch(()=>{});
+                document.getElementById('play-btn').innerHTML = '❚❚';
+                createHearts(12);
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function yesForever() {
+    createHearts(80);
+
+    // Create modal overlay
+    const overlay = document.createElement('div');
+    overlay.style.position = 'fixed';
+    overlay.style.inset = '0';
+    overlay.style.background = 'rgba(0,0,0,0.65)';
+    overlay.style.backdropFilter = 'blur(8px)';
+    overlay.style.zIndex = '9999';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.6s ease';
+
+    // Create modal content box
+    const modal = document.createElement('div');
+    modal.style.background = 'linear-gradient(135deg, #fff1f2, #fce7f3)';
+    modal.style.padding = '3rem 2.5rem';
+    modal.style.borderRadius = '2.5rem';
+    modal.style.boxShadow = '0 30px 70px rgba(225, 29, 72, 0.4)';
+    modal.style.maxWidth = '90%';
+    modal.style.width = '420px';
+    modal.style.textAlign = 'center';
+    modal.style.transform = 'scale(0.7)';
+    modal.style.opacity = '0';
+    modal.style.transition = 'all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
+
+    modal.innerHTML = `
+        <div style="font-size: 5rem; margin-bottom: 1.5rem;">❤️</div>
+        <h2 class="heading-font" style="font-size: 2.8rem; color: #e11d48; margin-bottom: 1rem;">
+            YES FOREVER! 💕
+        </h2>
+        <p style="font-size: 1.3rem; color: #4b5563; line-height: 1.6; margin-bottom: 2rem;">
+            Vishakha said YES to a lifetime of love, late-night coffee, hospital stories, and endless hugs with Aryan ♡
+        </p>
+        <button id="closeModalBtn" 
+            style="background: linear-gradient(to right, #e11d48, #fb7185); 
+                   color: white; 
+                   font-size: 1.3rem; 
+                   padding: 1rem 2.5rem; 
+                   border: none; 
+                   border-radius: 9999px; 
+                   cursor: pointer; 
+                   box-shadow: 0 10px 25px rgba(225,29,72,0.4); 
+                   transition: all 0.3s;">
+            Close & Hug Her Now! 🫂
+        </button>
+    `;
+
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+
+    // Animate in
+    setTimeout(() => {
+        overlay.style.opacity = '1';
+        modal.style.transform = 'scale(1)';
+        modal.style.opacity = '1';
+    }, 100);
+
+    // Close on button click or outside click
+    const closeModal = () => {
+        overlay.style.opacity = '0';
+        modal.style.transform = 'scale(0.7)';
+        modal.style.opacity = '0';
+        setTimeout(() => overlay.remove(), 700);
+        createHearts(30); // extra hearts when closing
+    };
+
+    document.getElementById('closeModalBtn').onclick = closeModal;
+    overlay.onclick = (e) => {
+        if (e.target === overlay) closeModal();
+    };
+
+    // Auto-create more hearts while modal is open
+    const heartInterval = setInterval(() => {
+        if (!document.body.contains(overlay)) {
+            clearInterval(heartInterval);
+            return;
+        }
+        createHearts(4);
+    }, 1200);
+}
+        // Init
+        window.onload = () => {
+            createHearts(25);
+            setTimeout(() => createHearts(15), 1500);
+        };
+    </script>
+</body>
+</html>
